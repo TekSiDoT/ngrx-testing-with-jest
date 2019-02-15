@@ -1,0 +1,5 @@
+<div [class.disco]="appFacade.partyHard$ | async"></div>
+<button id="addJester" type="button" (click)="appFacade.setJesters(jesters.length + 1)">Add Jester</button>
+<button id="partyHard" type="button" (click)="appFacade.partyHard()">Party HARD</button>
+<button id="killParty" type="button" (click)="appFacade.killParty()">Kill Party</button>
+<jestify-jester *ngFor="let jest of jesters"></jestify-jester>

@@ -1,0 +1,124 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "",
+  "projects": {
+    "jestify": {
+      "root": "apps/jestify/",
+      "sourceRoot": "apps/jestify/src",
+      "projectType": "application",
+      "prefix": "jestify",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/jestify",
+            "index": "apps/jestify/src/index.html",
+            "main": "apps/jestify/src/main.ts",
+            "polyfills": "apps/jestify/src/polyfills.ts",
+            "tsConfig": "apps/jestify/tsconfig.app.json",
+            "assets": ["apps/jestify/src/favicon.ico", "apps/jestify/src/assets"],
+            "styles": ["apps/jestify/src/styles.css"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/jestify/src/environments/environment.ts",
+                  "with": "apps/jestify/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "jestify:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "jestify:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "jestify:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/jestify/tsconfig.app.json", "apps/jestify/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/jestify/jest.config.js",
+            "tsConfig": "apps/jestify/tsconfig.spec.json",
+            "setupFile": "apps/jestify/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "jestify-e2e": {
+      "root": "apps/jestify-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/jestify-e2e/cypress.json",
+            "tsConfig": "apps/jestify-e2e/tsconfig.e2e.json",
+            "devServerTarget": "jestify:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "jestify:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/jestify-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false,
+      "versionMismatch": false
+    },
+    "defaultCollection": "@nrwl/schematics",
+    "packageManager": "npm"
+  },
+  "defaultProject": "jestify"
+}

@@ -1,0 +1,8 @@
+#jester {
+  height: auto;
+  position: fixed;
+}
+
+.flip {
+  transform: scaleX(-1);
+}

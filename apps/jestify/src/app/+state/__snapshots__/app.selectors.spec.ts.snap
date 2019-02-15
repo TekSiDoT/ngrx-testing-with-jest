@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Selectors App Selectors getJesters() should return number of jesters 1`] = `100`;
+
+exports[`App Selectors App Selectors getPartyHard() should return party state 1`] = `true`;

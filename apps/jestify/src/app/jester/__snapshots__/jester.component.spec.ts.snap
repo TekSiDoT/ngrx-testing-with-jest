@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jester Component has correct initial selector states 1`] = `1`;
+
+exports[`Jester Component has correct initial selector states 2`] = `false`;

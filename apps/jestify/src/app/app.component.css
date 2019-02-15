@@ -1,0 +1,17 @@
+#addJester {
+  position: fixed;
+  left: 20px;
+  top: 10px;
+}
+
+#partyHard {
+  position: fixed;
+  left: 100px;
+  top: 10px;
+}
+
+#killParty {
+  position: fixed;
+  left: 187px;
+  top: 10px;
+}

@@ -1,0 +1,54 @@
+html,
+body,
+jestify-root {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.disco {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #246655, #17f0f2, #7d17f2, #f2171f);
+  background-size: 800% 800%;
+
+  -webkit-animation: DiscoAnimation 10s ease infinite;
+  -moz-animation: DiscoAnimation 10s ease infinite;
+  animation: DiscoAnimation 10s ease infinite;
+}
+
+@-webkit-keyframes DiscoAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes DiscoAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes DiscoAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

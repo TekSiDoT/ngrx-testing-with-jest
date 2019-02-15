@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Reducer unknown action should return the initial state 1`] = `
+Object {
+  "jesters": 1,
+  "partyHard": false,
+}
+`;
+
+exports[`App Reducer valid App actions  should properly set MANY jesters 1`] = `
+Object {
+  "jesters": 1000,
+  "partyHard": false,
+}
+`;
+
+exports[`App Reducer valid App actions  should properly set jesters 1`] = `
+Object {
+  "jesters": 1,
+  "partyHard": false,
+}
+`;

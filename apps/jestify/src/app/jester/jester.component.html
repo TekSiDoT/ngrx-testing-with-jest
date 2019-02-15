@@ -1,0 +1,9 @@
+<img
+  id="jester"
+  src="../../assets/jester.png"
+  [class.flip]="flip$ | async"
+  [style.top.px]="(coord$ | async)?.y"
+  [style.left.px]="(coord$ | async)?.x"
+  [style.width.px]="width"
+  [style.filter]="'hue-rotate(' + (color$ | async) + 'deg)' | safe: 'style'"
+/>
